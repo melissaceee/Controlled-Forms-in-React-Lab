@@ -29,6 +29,28 @@ const Bookshelf = () => {
             value={newBook.title}
             required
           />
-  </div>
-  <div className="bookCardsDiv">{/* Book cards will display here */}</div>
-</div>
+ <p>Author:</p>
+          <input
+            type="text"
+            name="author"
+            onChange={handleInputChange}
+            value={newBook.author}
+            required
+          />
+          <br></br>
+          <input type="submit" value="Add Book" className="submit-button" />
+        </form>
+      </div>
+      <div className="bookCardsDiv">
+        {books.map((book) => (
+          <div className="bookCard">
+            <h3>{book.title}</h3>
+            <h4>by {book.author}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Bookshelf;
